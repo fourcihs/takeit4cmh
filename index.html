@@ -4,32 +4,29 @@
     <title>Warehouse Fourci | E-Stock</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #3b82f6; }
+        body, html { 
+            margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden;
+            /* SEKARANG KAKAK BISA PAKAI GRADASI KEREN DI SINI */
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); 
+        }
         .wrapper { position: relative; width: 100%; height: 100vh; overflow: hidden; }
         iframe {
             position: absolute;
             top: -45px; left: 0; width: 100%; height: calc(100% + 45px); border: none;
-            padding-top: 40px; padding-bottom: 60px; box-sizing: border-box;
+            padding-top: 15px; padding-bottom: 70px; box-sizing: border-box;
+            background: transparent; /* Pastikan iframe juga transparan */
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <iframe id="myIframe" src=""></iframe>
+        <iframe id="myIframe" src="" allowtransparency="true"></iframe>
     </div>
 
     <script>
-        // JURUS SAKTI: Menangkap parameter dari URL GitHub
         const queryString = window.location.search;
-        
-        // Link Web App Google Script Kakak (Tanpa parameter di ujungnya)
         const baseUrl = "https://script.google.com/macros/s/AKfycbwk4fPEOUYSX-x1dv2GZdPxepKWsEzgmjqoaYzyF4D7ARer_wZvksGShnRN5MepmDLr/exec";
-        
-        // Gabungkan Base Link dengan parameter yang ditangkap (?p=admin)
-        const finalUrl = baseUrl + queryString;
-        
-        // Masukkan link final ke dalam iframe
-        document.getElementById('myIframe').src = finalUrl;
+        document.getElementById('myIframe').src = baseUrl + queryString;
     </script>
 </body>
 </html>
